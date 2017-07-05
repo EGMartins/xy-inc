@@ -16,14 +16,14 @@ Tecnologias utilizadas:
 * Configuration
 
 - Faça o Download ou clone o repositório.
-- Execute o comando <bundle install>. Caso ocorra algum erro na instalação das Gems, execute o comando <bundle update>.
-- Abra uma seção do terminal na pasta raiz do sistema e execute o comando <rails s>, para iniciar o servidor da aplicação.
+- Execute o comando "bundle install". Caso ocorra algum erro na instalação das Gems, execute o comando "bundle update".
+- Abra uma seção do terminal na pasta raiz do sistema e execute o comando "rails s", para iniciar o servidor da aplicação.
 - No seu navegador acesse: localhost:3000
 - Agora é só seguir as instruções ṕara utilização!
 
 * Inicialização do banco de dados:
-- Dependendo do seu sistema operacional e da forma que o MongoDB foi instalado, será preciso incializá-lo antes de acessar o aplicativo. 		Normalmente isso é feito com o comando <mongod>
+- Dependendo do seu sistema operacional e da forma que o MongoDB foi instalado, será preciso incializá-lo antes de acessar o aplicativo. 		Normalmente isso é feito com o comando "mongod"
 
-* Para a execução da suite de testes, basta executar o comando <rspec> no terminal, posicionado na raiz da aplicação.
+* Para a execução da suite de testes, basta executar o comando "rspec" no terminal, posicionado na raiz da aplicação.
 
 
