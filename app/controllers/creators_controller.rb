@@ -23,12 +23,12 @@ class CreatorsController < ApplicationController
   def create
     @creator = Creator.new(creator_params)
     @creator.model_fields.build
-    flash[:notice] = 'Model Created!' if @creator.save
+    flash[:notice] = 'Modelo Created!' if @creator.save
     redirect_to root_path
   end
 
   def update
-    flash[:notice] = 'Model Updated!' if @creator.update(creator_params)
+    flash[:notice] = 'Modelo Atualizado!' if @creator.update(creator_params)
     respond_with @creator
   end
 

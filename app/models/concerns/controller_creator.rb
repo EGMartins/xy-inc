@@ -17,7 +17,7 @@ module ControllerCreator
 private
 
 	def my_header(doc)
-		"class #{doc.name.camelcase.pluralize.gsub(/[ _]/, '')}Controller < ApplicationController\n\tbefore_action :set_#{doc.name.downcase.gsub(/[ -]/, "_")}, only: [:show, :edit, :update, :destroy]\n\trespond_to :html, :json"
+		"class #{doc.name.camelcase.pluralize.gsub(/[ _]/, '')}Controller < ApplicationController\n\tbefore_action :set_#{doc.name.downcase.gsub(/[ -]/, "_")}, only: [:show, :edit, :update, :destroy]\n\trespond_to :json"
 	end
 
 	def my_index(doc)
