@@ -1,0 +1,40 @@
+<div class="container text-center">
+   <div class="wrapper">
+    <p id="notice"><%= notice %></p>
+
+    <h1>ZUP's Criador de Backend</h1>
+
+    <% unless @creators.present? %>
+      <h4>Instruções:</h4>
+      <p>Clique no botão abaixo para criar um nvo modelo.</p>
+      <p>Depois de criado, o modelo está pronto para ser acessado via API RestFull.</p>
+    <% end %>
+
+
+    <% if @creators.present? %>
+
+      <h4 class = "text-left">Modelos já criados:</h4>
+      <p class = "text-left"> <em>( Clique no nome para editar! )</em></p>
+      <table>
+        <thead>
+          <tr>
+            <th><strong>Nome do Modelo:</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @creators.each do |creator| %>
+            <% creator_name = creator.name.present? ? creator.name.capitalize : creator.name %>
+            <tr>
+              <td class = 'table-data'><%= link_to creator_name, creator %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+
+    <br>
+
+    <%= link_to 'Criar novo modelo', new_creator_path, class: 'btn btn-primary' %>
+
+  </div>
+</div>

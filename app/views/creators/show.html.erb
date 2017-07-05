@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="edit-wrapper text-center">
+		<p id="notice"><%= notice %></p>
+
+
+		 <h2> <strong>Nome do Modelo:</strong> </h2>
+
+		 <h3> <%= @creator.name %> </h3>
+
+		<%= link_to 'Editar', edit_creator_path(@creator), class: 'btn btn-warning' %> |
+		<%= link_to 'Voltar', creators_path, class: 'btn btn-primary' %> |
+		<%= link_to 'Excluir', @creator, method: :delete, data: { confirm: 'Tem certeza? Vai deletar esse modelo?' }, class: 'btn btn-danger' %>
+	</div>
+</div>

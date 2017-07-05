@@ -1,0 +1,40 @@
+<%= form_for(creator) do |f| %>
+  <% if creator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(creator.errors.count, "error") %> prohibited this creator from being saved:</h2>
+
+      <ul>
+      <% creator.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+    <div class="form-group">
+      <br>
+      <%= f.text_field :name, class: 'form-control', onKeyUp: "forceLowerCase(this)", placeholder: 'Digite o nome do seu modelo' %>
+    </div>
+    <div class="form-group">
+      <br>
+      <%= f.text_area :info, class: 'form-control', placeholder: 'Escreva aqui alguma informação relevante sobre seu modelo', rows: 6 %>
+    </div>
+  </fieldset>
+  <fieldset>
+    <hr>
+    <div id="model_fields">
+      <%= f.fields_for :model_fields, child_index: Time.now.to_i do |ff| %>
+        <%= render 'model_field_fields', f: ff %>
+      <% end %>
+      <div class="links">
+        <br>
+        <%= link_to_add_association 'Adicionar Campo', f, :model_fields, class: 'btn btn-warning'%>
+      </div>
+    </div>
+    <br>
+    <hr>
+    <div class="actions">
+      <%= f.submit 'Criar o Modelo', class: 'btn btn-success', id: 'creator-button'%>
+    </div>
+  </fieldset>
+<% end %>

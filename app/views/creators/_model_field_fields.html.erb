@@ -1,0 +1,18 @@
+<div class="nested-fields">
+
+	<div class="input-group">
+			<div class="field col-md-6">
+				<%= f.text_field :field_name, class: 'form-control', placeholder: 'Field Name' %>
+			</div>
+
+
+			<div class='field col-md-4'>
+				<%= f.select :field_type, ['String', 'Integer', 'BigDecimal', 'Date'], {prompt: "Select Type"}, {class: "form-control"} %>
+			</div>
+
+			<span class="input-group-btn col-md-2">
+        <%= link_to_remove_association "Remove Field", f , class: 'btn btn-danger'%>
+   		</span>
+	</div>
+</div>
+<br>
