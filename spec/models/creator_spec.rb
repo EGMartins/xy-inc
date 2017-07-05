@@ -10,11 +10,11 @@ describe Creator do
 	end
 	it "does not have the same name model" do
 		FactoryGirl.build(:creator, name: 'Test Model')
-		expect(FactoryGirl.build(:creator, name: 'Test Model')).to be_valid
+		expect(FactoryGirl.build(:creator, name: 'Test Model')).not_to be_valid
 	end
 	it "check case sensitive name" do
 		FactoryGirl.build(:creator, name: 'Test Model')
-		expect(FactoryGirl.build(:creator, name: 'test model')).to be_valid
+		expect(FactoryGirl.build(:creator, name: 'test model')).not_to be_valid
 	end
 end
 
@@ -26,6 +26,7 @@ RSpec.feature "Creating Model" do
 		fill_in "creator[name]", with: "client"
 		fill_in "creator[info]", with: "Model for a client info"
 		click_link "Adicionar Campo"
-
+		click_button "Criar o Modelo"
+		expect(page).to have_content "Modelos já criados"
 	end
 end

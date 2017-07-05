@@ -1,6 +1,6 @@
 # XY_INC - Criador de Backend
 
-Este é um aplicativo para criar de forma dinâmica. Tudo criado em tempo de execução. Basta escolher o nome do modelo, seus campos e tipos e pronto, tudo está preparado para ser utilizado pelo seu aplicativo atravém de chamadas Restfull.
+Este é um aplicativo para criar de forma dinâmica. Tudo criado em tempo de execução. Basta escolher o nome do modelo, seus campos e tipos e pronto, tudo está preparado para ser utilizado pelo seu aplicativo através de chamadas Restfull.
 
 Tecnologias utilizadas:
 
