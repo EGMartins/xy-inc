@@ -30,3 +30,20 @@ RSpec.feature "Creating Model" do
 		expect(page).to have_content "Modelos já criados"
 	end
 end
+
+RSpec.describe "Model management", :type => :request do
+
+  it "creates a instance and redirects to the instance's page" do
+    get "/creators/new"
+    expect(response).to render_template(:new)
+
+    post "/creators", :params => { :creator => {name: "client", info: "Just another test"} }
+    expect(response).to have_http_status(:found)
+    
+  end
+
+  it "does not render a different template" do
+    get "/creators/new"
+    expect(response).to_not render_template(:show)
+  end
+end
